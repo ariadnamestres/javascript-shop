@@ -67,7 +67,6 @@ const products = [
 // Exercise 1 
 
 let cartList = [ ]
-// var total = 0;
 
 function buy(id) {
   for ( let i = 0; i < products.length; i ++) {
@@ -99,20 +98,26 @@ function cleanCart() {
 // Exercise 3
 
 function totalWithDiscount() {
-  let totalWithDiscount = 0
-  cartList.forEach( product => {
-    totalWithDiscount += product.subtotalWithDiscount
-  }) 
+  let totalWithDiscount = 0;
+  for (let i = 0; i < cartList.length; i++) {
+    totalWithDiscount += cartList[i].subtotalWithDiscount
+  }
   return totalWithDiscount
 }
+// function totalWithDiscount() {
+//   let totalWithDiscount = 0
+//   cartList.forEach( product => {
+//     totalWithDiscount += product.subtotalWithDiscount
+//   }) 
+//   return totalWithDiscount
+// }
 
-// otra manera de hacerlo
 
 // functiontotalWithDiscount() {
 //   return cartList.reduce((total, product) => total + product.subtotalWithDiscount, 0)
 // }
 
-
+//exercici 4 
 function  applyPromotionsCart() {
     cartList.forEach( cardlistitem => {
       const product = products.find( p => p.id === cardlistitem.id)
